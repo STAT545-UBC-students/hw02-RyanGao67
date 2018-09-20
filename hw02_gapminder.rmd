@@ -1,0 +1,87 @@
+---
+title: "STAT 545A Homework 2"
+author: "Tian Gao"
+date: "2018/9/20"
+output: github_document
+---
+
+
+# Bring rectangular data in
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+# Smell test the data
+## Is it a data frame, a matrix, a vector, a list?
+```{r}
+class(gapminder)
+
+```
+* This is a data frame
+
+## what is its class?
+* Its classes are tbl_df, tbl, data.frame
+
+## How many variables/columns?
+```{r}
+ncol(gapminder)
+```
+
+## How many rows/observations?
+```{r}
+nrow(gapminder)
+```
+## Can you get these facts about "extent" or "size" in more than one way? Can you imagine different functions being useful in different contexts?
+```{r}
+dim(gapminder)
+```
+
+## What data type is each variable?
+```{r}
+str(gapminder)
+
+```
+* We can see that there are six variables:
+* "country" is Factor
+* "continent" is Factor
+* "year" is int
+* "lifeExp" is num
+* "pop" is int
+* "gdpPercap" is num
+ 
+ 
+# Explore individual variables
+## What are possible values of each variables? 
+```{r}
+unique(gapminder$year)
+range(gapminder$year)
+```
+* Above are the unique values and range of "year" variable
+```{r}
+unique(gapminder$continent)
+```
+* Above are the unique values of "year" variable.
+
+## What values are typical? What's the spread? What's the distribution? 
+```{r}
+frequency_year = table(gapminder$year)
+frequency_continent = table(gapminder$continent)
+frequency_year
+frequency_continent
+```
+* We can see that, from the aspect of year, the sample is equally distributed, every year appeard 142 times
+* From the aspect of continent, the typical value is "Africa"
+```{r}
+summary(gapminder$year)
+summary(gapminder$continent)
+```
+
+# Explore various plot types
+## Make a few plots, probably of the same variable you chose to characterize numerically. You can use the plot types we went over in class (cm006) to get an idea of what you¡¯d like to make. Try to explore more than one plot type. Just as an example of what I mean:
+
+# A scatterplot of two quantitative variables.
+
+# A plot of one quantitative variable. Maybe a histogram or densityplot or frequency polygon.
+# A plot of one quantitative variable and one categorical. Maybe boxplots for several continents or countries.
+# You don¡¯t have to use all the data in every plot! It¡¯s fine to filter down to one country or small handful of countries.
