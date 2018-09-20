@@ -114,7 +114,7 @@ unique(gapminder$continent)
     ## [1] Asia     Europe   Africa   Americas Oceania 
     ## Levels: Africa Americas Asia Europe Oceania
 
-  - Above are the unique values of “year” variable.
+  - Above are the unique values of “continent” variable.
 
 ## What values are typical? What’s the spread? What’s the distribution?
 

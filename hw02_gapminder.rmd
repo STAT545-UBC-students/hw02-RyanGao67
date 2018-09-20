@@ -61,7 +61,7 @@ range(gapminder$year)
 ```{r}
 unique(gapminder$continent)
 ```
-* Above are the unique values of "year" variable.
+* Above are the unique values of "continent" variable.
 
 ## What values are typical? What's the spread? What's the distribution? 
 ```{r}
