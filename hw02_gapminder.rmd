@@ -88,6 +88,7 @@ ggplot(gapminder,aes(x=year, y=lifeExp))+
   # make a scatterplot
   geom_point()
 ```
+
 * Here is the jitter version
 ```{r}
 ggplot(gapminder, aes(x=year, y=pop))+
@@ -95,6 +96,7 @@ ggplot(gapminder, aes(x=year, y=pop))+
   # make a jitter plot
   geom_jitter()
 ```
+
 * Next I'll focus on canada and plot the changes in canadian's lifeExp against year.
 ```{r}
 # filter the country to see only Canada
@@ -106,6 +108,7 @@ ggplot(gapminder, aes(x=year, y=pop))+
   geom_line()
 
 ```
+
 * Next I'll plot the histgram, densityplot and frequency polygon of population 
 * A histogram of "pop"
 ```{r}
@@ -113,12 +116,14 @@ ggplot(gapminder, aes(x=pop)) +
   geom_histogram(bins=100)+
   scale_x_log10()
 ```
+
 * A densityplot of "pop"
 ```{r}
 ggplot(gapminder, aes(x = pop))+
   geom_density(fill="pink")+
   scale_x_log10()
 ```
+
 * I'll then plot both of the histogram and densityplot in one graph.
 ```{r}
 ggplot(gapminder, aes(x=pop)) + 
@@ -126,6 +131,7 @@ ggplot(gapminder, aes(x=pop)) +
   geom_histogram(bins=100, aes(y=..density..))+
   geom_density()
 ```
+
 * A frequency polygon of "pop"
 
 ```{r}
@@ -133,6 +139,7 @@ ggplot(gapminder, aes(x = pop))+
   scale_x_log10()+
   geom_freqpoly(bins=100)
 ```
+
 * Next I'll use boxplots to show the population of different continents
 ```{r}
 # select population and continent
@@ -158,7 +165,7 @@ filter(gapminder, country %in% c("Rwanda", "Afghanistan"))
 ```
 
 
-*Explore summarise() and group_by()
+* Explore summarise() and group_by()
 ```{r}
 group_by(gapminder, continent) %>%
 summarize(

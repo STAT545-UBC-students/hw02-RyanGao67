@@ -173,8 +173,11 @@ ggplot(gapminder,aes(x=year, y=lifeExp))+
   geom_point()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> \*
-Here is the jitter version
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+  - Here is the jitter version
+
+<!-- end list -->
 
 ``` r
 ggplot(gapminder, aes(x=year, y=pop))+
@@ -183,9 +186,12 @@ ggplot(gapminder, aes(x=year, y=pop))+
   geom_jitter()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> \*
-Next I’ll focus on canada and plot the changes in canadian’s lifeExp
-against year.
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+  - Next I’ll focus on canada and plot the changes in canadian’s lifeExp
+    against year.
+
+<!-- end list -->
 
 ``` r
 # filter the country to see only Canada
@@ -197,9 +203,13 @@ against year.
   geom_line()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> \*
-Next I’ll plot the histgram, densityplot and frequency polygon of
-population \* A histogram of “pop”
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+  - Next I’ll plot the histgram, densityplot and frequency polygon of
+    population
+  - A histogram of “pop”
+
+<!-- end list -->
 
 ``` r
 ggplot(gapminder, aes(x=pop)) + 
@@ -207,8 +217,11 @@ ggplot(gapminder, aes(x=pop)) +
   scale_x_log10()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> \* A
-densityplot of “pop”
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+  - A densityplot of “pop”
+
+<!-- end list -->
 
 ``` r
 ggplot(gapminder, aes(x = pop))+
@@ -216,8 +229,11 @@ ggplot(gapminder, aes(x = pop))+
   scale_x_log10()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-15-1.png)<!-- --> \*
-I’ll then plot both of the histogram and densityplot in one graph.
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+  - I’ll then plot both of the histogram and densityplot in one graph.
+
+<!-- end list -->
 
 ``` r
 ggplot(gapminder, aes(x=pop)) + 
@@ -226,8 +242,11 @@ ggplot(gapminder, aes(x=pop)) +
   geom_density()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-16-1.png)<!-- --> \* A
-frequency polygon of “pop”
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+
+  - A frequency polygon of “pop”
+
+<!-- end list -->
 
 ``` r
 ggplot(gapminder, aes(x = pop))+
@@ -235,8 +254,12 @@ ggplot(gapminder, aes(x = pop))+
   geom_freqpoly(bins=100)
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-17-1.png)<!-- --> \*
-Next I’ll use boxplots to show the population of different continents
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+
+  - Next I’ll use boxplots to show the population of different
+    continents
+
+<!-- end list -->
 
 ``` r
 # select population and continent
@@ -301,7 +324,9 @@ filter(gapminder, country %in% c("Rwanda", "Afghanistan"))
     ## 10 Afghanistan Asia       1997    41.8 22227415      635.
     ## # ... with 14 more rows
 
-\*Explore summarise() and group\_by()
+  - Explore summarise() and group\_by()
+
+<!-- end list -->
 
 ``` r
 group_by(gapminder, continent) %>%
