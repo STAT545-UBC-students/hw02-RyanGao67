@@ -78,10 +78,93 @@ summary(gapminder$continent)
 ```
 
 # Explore various plot types
-## Make a few plots, probably of the same variable you chose to characterize numerically. You can use the plot types we went over in class (cm006) to get an idea of what you¡¯d like to make. Try to explore more than one plot type. Just as an example of what I mean:
+## Make a few plots, probably of the same variable you chose to characterize numerically. You can use the plot types we went over in class (cm006) to get an idea of what you¡¯d like to make. Try to explore more than one plot type.
+* First I'll explore the year and LifeExp
+```{r}
+# year as x axis and lifeExp as y axis
+ggplot(gapminder,aes(x=year, y=lifeExp))+
+  # scale y axis by log10
+  scale_y_log10()+
+  # make a scatterplot
+  geom_point()
+```
+* Here is the jitter version
+```{r}
+ggplot(gapminder, aes(x=year, y=pop))+
+  scale_y_log10()+
+  # make a jitter plot
+  geom_jitter()
+```
+* Next I'll focus on canada and plot the changes in canadian's lifeExp against year.
+```{r}
+# filter the country to see only Canada
+  filter(gapminder, country == "Canada") %>%
+  ggplot(aes(x=year, y=lifeExp))+
+  scale_y_log10()+
+# plot both point and line to see the trend
+  geom_point()+
+  geom_line()
 
-# A scatterplot of two quantitative variables.
+```
+* Next I'll plot the histgram, densityplot and frequency polygon of population 
+* A histogram of "pop"
+```{r}
+ggplot(gapminder, aes(x=pop)) + 
+  geom_histogram(bins=100)+
+  scale_x_log10()
+```
+* A densityplot of "pop"
+```{r}
+ggplot(gapminder, aes(x = pop))+
+  geom_density(fill="pink")+
+  scale_x_log10()
+```
+* I'll then plot both of the histogram and densityplot in one graph.
+```{r}
+ggplot(gapminder, aes(x=pop)) + 
+  scale_x_log10()+
+  geom_histogram(bins=100, aes(y=..density..))+
+  geom_density()
+```
+* A frequency polygon of "pop"
 
-# A plot of one quantitative variable. Maybe a histogram or densityplot or frequency polygon.
-# A plot of one quantitative variable and one categorical. Maybe boxplots for several continents or countries.
-# You don¡¯t have to use all the data in every plot! It¡¯s fine to filter down to one country or small handful of countries.
+```{r}
+ggplot(gapminder, aes(x = pop))+
+  scale_x_log10()+
+  geom_freqpoly(bins=100)
+```
+* Next I'll use boxplots to show the population of different continents
+```{r}
+# select population and continent
+select(gapminder, pop, continent) %>%
+  ggplot(aes(x = continent, y=pop)) + 
+  scale_y_log10()+
+# make a boxplot
+  geom_boxplot()
+```
+
+
+# But I want to do more
+## Evaluate this code and describe the result
+```{r}
+filter(gapminder, country == c("Rwanda", "Afghanistan"))
+```
+
+* Evaluate this code and describe the result. Presumably the analyst¡¯s intent was to get the data for Rwanda and Afghanistan. Did they succeed? Why or why not? If not, what is the correct way to do this?
+* I think we should use %in% instead of ==, because the original intent is to get data either of Afghanistan or Rwanda, but not both. The following is the right version.
+
+```{r}
+filter(gapminder, country %in% c("Rwanda", "Afghanistan"))
+```
+
+
+*Explore summarise() and group_by()
+```{r}
+group_by(gapminder, continent) %>%
+summarize(
+    avg_lifeExp = mean(lifeExp),
+    average_gpd = mean(gdpPercap),
+  
+)
+```
+
