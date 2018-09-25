@@ -159,13 +159,16 @@ filter(gapminder, country == c("Rwanda", "Afghanistan"))
 ```
 
 * Evaluate this code and describe the result. Presumably the analyst¡¯s intent was to get the data for Rwanda and Afghanistan. Did they succeed? Why or why not? If not, what is the correct way to do this?
-* I think we should use %in% instead of ==, because the original intent is to get data either of Afghanistan or Rwanda, but not both. The following is the right version.
-
+* I think we should use %in% instead of ==, because the original intent is to get data either of Afghanistan or Rwanda. The following is the right version.
+* Another way to do this is to use ||. 
 ```{r}
 filter(gapminder, country %in% c("Rwanda", "Afghanistan"))
 ```
 
-
+```{r}
+gapminder %>%
+  filter(country == "Rwanda" | country == "Afghanistan")
+```
 * Explore summarise() and group_by()
 ```{r}
 group_by(gapminder, continent) %>%
