@@ -198,8 +198,11 @@ ggplot(gapminder, aes(x=year, y=pop))+
   geom_jitter()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> \*
-Next I want to check the relation between population and GDPpercap.
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+  - Next I want to check the relation between population and GDPpercap.
+
+<!-- end list -->
 
 ``` r
 gapminder %>%
@@ -210,9 +213,12 @@ gapminder %>%
   ggtitle("Relationship between year and gdp")
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> \*
-If we want to see all relations between any two of the variables, we can
-use pairs
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+  - If we want to see all relations between any two of the variables, we
+    can use pairs
+
+<!-- end list -->
 
 ``` r
 pairs(gapminder)
