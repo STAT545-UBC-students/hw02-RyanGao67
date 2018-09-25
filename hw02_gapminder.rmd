@@ -97,6 +97,21 @@ ggplot(gapminder, aes(x=year, y=pop))+
   # make a jitter plot
   geom_jitter()
 ```
+* Next I want to check the relation between population and GDPpercap.
+
+```{r}
+gapminder %>%
+  # filter the country
+  filter(country == 'Canada') %>%
+  ggplot(aes(pop, gdpPercap)) +
+  geom_point(alpha = 1,colour = "red") +
+  ggtitle("Relationship between year and gdp")
+```
+* If we want to see all relations between any two of the variables, we can use pairs
+
+```{r}
+pairs(gapminder)
+```
 
 * Next I'll focus on canada and plot the changes in canadian's lifeExp against year.
 ```{r}

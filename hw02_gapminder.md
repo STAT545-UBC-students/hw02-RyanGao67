@@ -198,7 +198,27 @@ ggplot(gapminder, aes(x=year, y=pop))+
   geom_jitter()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> \*
+Next I want to check the relation between population and GDPpercap.
+
+``` r
+gapminder %>%
+  # filter the country
+  filter(country == 'Canada') %>%
+  ggplot(aes(pop, gdpPercap)) +
+  geom_point(alpha = 1,colour = "red") +
+  ggtitle("Relationship between year and gdp")
+```
+
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> \*
+If we want to see all relations between any two of the variables, we can
+use pairs
+
+``` r
+pairs(gapminder)
+```
+
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
   - Next I’ll focus on canada and plot the changes in canadian’s lifeExp
     against year.
@@ -215,7 +235,7 @@ ggplot(gapminder, aes(x=year, y=pop))+
   geom_line()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
   - Next I’ll plot the histgram, densityplot and frequency polygon of
     population
@@ -229,7 +249,7 @@ ggplot(gapminder, aes(x=pop)) +
   scale_x_log10()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
   - A densityplot of “pop”
 
@@ -241,7 +261,7 @@ ggplot(gapminder, aes(x = pop))+
   scale_x_log10()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
   - I’ll then plot both of the histogram and densityplot in one graph.
 
@@ -254,7 +274,7 @@ ggplot(gapminder, aes(x=pop)) +
   geom_density()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
   - A frequency polygon of “pop”
 
@@ -266,7 +286,7 @@ ggplot(gapminder, aes(x = pop))+
   geom_freqpoly(bins=100)
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
   - Next I’ll use boxplots to show the population of different
     continents
@@ -282,7 +302,7 @@ select(gapminder, pop, continent) %>%
   geom_boxplot()
 ```
 
-![](hw02_gapminder_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](hw02_gapminder_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 # But I want to do more
 
