@@ -34,6 +34,18 @@ class(gapminder)
 
     ## [1] "tbl_df"     "tbl"        "data.frame"
 
+``` r
+is.data.frame(gapminder)
+```
+
+    ## [1] TRUE
+
+``` r
+is.list(gapminder)
+```
+
+    ## [1] TRUE
+
   - This is a data frame
 
 ## what is its class?

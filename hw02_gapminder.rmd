@@ -16,7 +16,8 @@ library(gapminder)
 ## Is it a data frame, a matrix, a vector, a list?
 ```{r}
 class(gapminder)
-
+is.data.frame(gapminder)
+is.list(gapminder)
 ```
 * This is a data frame
 
