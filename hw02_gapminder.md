@@ -210,7 +210,7 @@ gapminder %>%
   filter(country == 'Canada') %>%
   ggplot(aes(pop, gdpPercap)) +
   geom_point(alpha = 1,colour = "red") +
-  ggtitle("Relationship between year and gdp")
+  ggtitle("Relationship between population and gdp")
 ```
 
 ![](hw02_gapminder_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->

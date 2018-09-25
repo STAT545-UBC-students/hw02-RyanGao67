@@ -106,7 +106,7 @@ gapminder %>%
   filter(country == 'Canada') %>%
   ggplot(aes(pop, gdpPercap)) +
   geom_point(alpha = 1,colour = "red") +
-  ggtitle("Relationship between year and gdp")
+  ggtitle("Relationship between population and gdp")
 ```
 
 * If we want to see all relations between any two of the variables, we can use pairs
